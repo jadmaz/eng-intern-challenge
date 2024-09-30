@@ -1,3 +1,4 @@
+import sys
 
 braille_letters_to_english = {
     "O.....": "a",
@@ -143,3 +144,15 @@ def english_to_braille(english_string):
             braille_string += english_letters_to_braille[char]
     return braille_string
 
+def main():
+
+
+    input_string = " ".join(sys.argv[1:]).strip()
+
+    if all(char in "O. " for char in input_string):
+        print(braille_to_english(input_string))
+    else:
+        print(english_to_braille(input_string))
+
+if __name__ == "__main__":
+    main()
